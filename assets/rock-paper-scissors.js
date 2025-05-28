@@ -5,49 +5,94 @@ function getComputerChoice() {
     // So uh, for this one I just thought about using if-else statements, so I checked to see how they worked and it worked!
     let computerChoice = Math.floor (Math.random()* 3);
 
-  /*  if (computerChoice == 1)
+    if (computerChoice == 1)
         return 'rock';
     else if (computerChoice == 2)
         return 'paper';
     else
-        return 'scissors'; */
+        return 'scissors';
 }
 
-function getHumanChoice(choice) { 
+function getHumanChoice() { 
 
-    choice = prompt('Rock, Paper, or Scissors?','')
+    let choice = prompt('Rock, Paper, or Scissors?','');
 
-    normalizedChoice = choice.toLowerCase()
-    
+    const normalizedChoice = choice.toLowerCase();
+
+    return normalizedChoice;
 }
 
 let humanScore = 0;
 let computerScore = 0;
 
-
 function playRound(humanChoice, computerChoice) {
 
-    humanChoice = getHumanChoice;
-    computerChoice = getComputerChoice;
-
-    switch (normalizedChoice) {
+    switch (humanChoice) {
         case "rock":
 
-            if (getComputerChoice === 1) {
-                    alert("It's a tie")
+            if (computerChoice == 'rock') {
+                     console.log("It's a tie");
+                     console.log('YOU: ' + humanScore + ' ; CPU: ' + computerScore);
                 }
-                else if (getComputerChoice === 2) {
-                    alert("You lose!")
-                }    
-                else if (getComputerChoice === 3) {
-                    alert('You win!')
-
-                
+                else if (computerChoice == 'paper') {
+                    console.log('You lose!');
+                    computerScore++;
+                    console.log('YOU: ' + humanScore + ' ; CPU: ' + computerScore);
+                }
+                else if (computerChoice == 'scissors') {
+                    console.log("You win!");
+                    humanScore++;
+                    console.log('YOU: ' + humanScore + ' ; CPU: ' + computerScore);
+                }
         break;
-        }
-        
-
+        case "paper":
+                
+            if (computerChoice == 'rock') {
+                    console.log("You win!");
+                    humanScore++;
+                    console.log('YOU: ' + humanScore + ' ; CPU: ' + computerScore);
+                    
+                }
+            else if (computerChoice == 'paper') {
+                    console.log("It's a tie");
+                    console.log('YOU: ' + humanScore + ' ; CPU: ' + computerScore);
+                }    
+            else if (computerChoice == 'scissors') {
+                    console.log('You lose!');
+                    computerScore++;
+                    console.log('YOU: ' + humanScore + ' ; CPU: ' + computerScore);
+                }
+        break;
+        case "scissors":
+            
+            if (computerChoice == 'rock') {
+                    console.log("It's a tie");
+                    console.log('YOU: ' + humanScore + ' ; CPU: ' + computerScore);
+                }
+            else if (computerChoice == 'paper') {
+                    console.log('You lose!');
+                    computerScore++;
+                    console.log('YOU: ' + humanScore + ' ; CPU: ' + computerScore);
+                }    
+            else if (computerChoice == 'scissors') {
+                    console.log("You win!");
+                    humanScore++;
+                    console.log('YOU: ' + humanScore + ' ; CPU: ' + computerScore);
+                }
+        break;
     }
+
+}
+
+function playAgain() {
+
+let playAgain = confirm('play again?');
+alert(playAgain);
+if (playAgain == true)
+playRound();
+else
+return
+
 }
 
 const humanSelection = getHumanChoice();
