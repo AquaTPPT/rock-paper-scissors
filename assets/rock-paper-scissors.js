@@ -16,10 +16,18 @@ function getComputerChoice() {
 function getHumanChoice() { 
 
     let choice = prompt('Rock, Paper, or Scissors?','');
+    let choice2 = prompt('Rock, Paper, or Scissors?','');
+    let choice3 = prompt('Rock, Paper, or Scissors?','');
+    let choice4 = prompt('Rock, Paper, or Scissors?','');
+    let choice5 = prompt('Rock, Paper, or Scissors?','');
 
     const normalizedChoice = choice.toLowerCase();
+    const normalizedChoice2 = choice2.toLowerCase();
+    const normalizedChoice3 = choice3.toLowerCase();
+    const normalizedChoice4 = choice4.toLowerCase();
+    const normalizedChoice5 = choice5.toLowerCase();
 
-    return normalizedChoice;
+    return normalizedChoice, normalizedChoice2, normalizedChoice3, normalizedChoice4, normalizedChoice5;
 }
 
 let humanScore = 0;
@@ -84,18 +92,18 @@ function playRound(humanChoice, computerChoice) {
 
 }
 
-function playAgain() {
 
-let playAgain = confirm('play again?');
-alert(playAgain);
-if (playAgain == true)
-playRound();
-else
-return
+function playGame() {
 
+    playRound(humanSelection, computerSelection);
+    playRound(humanSelection, computerSelection);
+    playRound(humanSelection, computerSelection);
+    playRound(humanSelection, computerSelection);
+    playRound(humanSelection, computerSelection);
 }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+
+playGame()
