@@ -49,14 +49,6 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame() {
 
-    for (i=1;i<=5; ++i) {
-        
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        
-        playRound(humanSelection, computerSelection);
-    }
-
     let endResult;
 
     if (computerScore < humanScore) {
